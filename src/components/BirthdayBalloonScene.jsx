@@ -3,12 +3,12 @@ import confetti from 'canvas-confetti';
 import sounds from '../audio/soundEffects';
 
 const INITIAL_BALLOONS = [
-  { id: 1, color: '#FF6B8B', highlight: '#FFA3B5', text: 'Nonsense', x: 18, y: 35, delay: 0 },
-  { id: 2, color: '#FFB703', highlight: '#FFE066', text: 'Halfmind', x: 38, y: 22, delay: 0.8 },
-  { id: 3, color: '#E63956', highlight: '#FF7597', text: 'Rone Wali', x: 62, y: 28, delay: 0.4 },
-  { id: 4, color: '#B5838D', highlight: '#DDBEA9', text: 'Meri best friend', x: 82, y: 36, delay: 1.2 },
+  { id: 1, color: '#FF6B8B', highlight: '#FFA3B5', text: 'Nonsense🙃', x: 18, y: 35, delay: 0 },
+  { id: 2, color: '#FFB703', highlight: '#FFE066', text: 'Halfmind🙄', x: 38, y: 22, delay: 0.8 },
+  { id: 3, color: '#E63956', highlight: '#FF7597', text: 'Rone Wali😭', x: 62, y: 28, delay: 0.4 },
+  { id: 4, color: '#B5838D', highlight: '#DDBEA9', text: 'Meri best friend☺️', x: 82, y: 36, delay: 1.2 },
   { id: 5, color: '#FF85A1', highlight: '#FFCAD4', text: 'Meri Jaan 💖', x: 28, y: 52, delay: 0.6 },
-  { id: 6, color: '#F72585', highlight: '#B5179E', text: 'Forever & Always 💍', x: 72, y: 50, delay: 1.0 },
+  { id: 6, color: '#F72585', highlight: '#B5179E', text: 'Ladaku🫠', x: 72, y: 50, delay: 1.0 },
 ];
 
 export default function BirthdayBalloonScene({ onComplete, girlfriendName = 'Nonsense 🙃' }) {
