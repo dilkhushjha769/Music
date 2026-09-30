@@ -4,7 +4,7 @@ import sounds from '../audio/soundEffects';
 
 export default function FinalScene({
   girlfriendName = 'Nonsense 🙃',
-  specialDate = 'Happy Birthday Nonsense 🙃',
+  specialDate = 'Happy Birthday Nonsense🙃',
   personalMessage = 'Bss aise hi saath rehna hmesha',
   onReplay,
 }) {
