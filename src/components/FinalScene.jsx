@@ -156,54 +156,51 @@ export default function FinalScene({
 
       </div>
 
-      {/* SECRET LOVE LETTER MODAL WITH WAX SEAL */}
+      {/* SECRET LOVE LETTER MODAL WITH REAL HANDWRITTEN LETTER */}
       {isLetterOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 backdrop-blur-sm p-4 animate-fade-in">
-          <div className="relative max-w-lg w-full bg-[#FFFDF9] rounded-3xl p-6 md:p-10 shadow-2xl border border-rose-200 transform animate-[scaleUp_0.35s_ease-out]">
-
+        <div
+          onClick={() => setIsLetterOpen(false)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md p-3 sm:p-5 animate-fade-in"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-lg w-full bg-[#FFFDF9] rounded-3xl p-5 sm:p-7 shadow-2xl border border-rose-200 transform animate-[scaleUp_0.35s_ease-out] flex flex-col max-h-[92vh] overflow-hidden"
+          >
             {/* Close button */}
             <button
               onClick={() => {
                 sounds.playTap();
                 setIsLetterOpen(false);
               }}
-              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-rose-50 text-rose-400 hover:bg-rose-100 flex items-center justify-center text-sm cursor-pointer transition-colors"
+              className="absolute top-3.5 right-3.5 z-20 w-8 h-8 rounded-full bg-rose-100 text-rose-500 hover:bg-rose-200 flex items-center justify-center text-sm font-bold cursor-pointer transition-colors shadow-sm"
+              title="Close Letter"
             >
               ✕
             </button>
 
             {/* Wax Seal Header */}
-            <div className="flex flex-col items-center mb-5">
-              <div className="w-14 h-14 rounded-full bg-[#C41E3A] border-4 border-[#A3162D] text-white flex items-center justify-center text-xl shadow-lg shadow-rose-900/30">
+            <div className="flex flex-col items-center mb-3">
+              <div className="w-12 h-12 rounded-full bg-[#C41E3A] border-4 border-[#A3162D] text-white flex items-center justify-center text-lg shadow-lg shadow-rose-900/30">
                 ♡
               </div>
-              <span className="font-serif italic text-sm text-[#A66E7A] mt-2">
-                Handwritten with endless adoration
+              <span className="font-serif italic text-xs sm:text-sm text-[#A66E7A] mt-1.5">
+                Handwritten with endless love for you ✨
               </span>
             </div>
 
-            {/* Letter Body */}
-            <div className="font-handwriting text-2xl md:text-3xl text-[#3D262C] leading-relaxed space-y-4 max-h-[60vh] overflow-y-auto pr-2">
-              {<p>Abhi likha hai😅,</p>
-/*
-              <p>
-                From the moment you walked into my life, everything became brighter, warmer, and so much softer.
-              </p>
-
-              <p>
-                Thank you for being my safest home, my loudest laughter, and my gentlest peace. On your birthday and every single day that follows, {personalMessage}.
-              </p>
-
-              <p className="pt-2">
-                Forever yours, <br />
-                With all my heart ❤️
-              </p> */}
+            {/* Letter Image Display Container (Scrollable for clear reading) */}
+            <div className="relative w-full overflow-y-auto rounded-2xl border border-rose-200 shadow-inner bg-white p-1 max-h-[62vh]">
+              <img
+                src="/photos/handwritten_letter.png"
+                alt="Handwritten Letter for Nonsense"
+                className="w-full h-auto object-contain rounded-xl select-none"
+              />
             </div>
 
             {/* Bottom seal */}
-            <div className="mt-5 pt-3 border-t border-rose-100 flex justify-between items-center text-xs font-sans text-rose-400">
-              <span>{specialDate}</span>
-              <span>Always &amp; Forever ✨</span>
+            <div className="mt-3 pt-2.5 border-t border-rose-100 flex justify-between items-center text-xs font-sans text-rose-500">
+              <span className="font-medium">1 Oct • Special Moment</span>
+              <span>Always &amp; Forever ❤️</span>
             </div>
           </div>
         </div>
