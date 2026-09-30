@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream-bg: #FAF7F2;
+  --romantic-pink: #FF6B8B;
+  --deep-rose: #E63956;
+  --soft-blush: #FFE8EC;
+  --gold-accent: #E5A823;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FAF7F2;
+  color: #382B2B;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Glassmorphism romantic cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 12px 35px -8px rgba(224, 112, 137, 0.16), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+}
+
+.glass-card-dark {
+  background: rgba(35, 20, 26, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 180, 195, 0.2);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.35);
+}
+
+/* 3D Heart Glow */
+.heart-glow {
+  filter: drop-shadow(0 10px 24px rgba(255, 75, 110, 0.38))
+          drop-shadow(0 0 40px rgba(255, 140, 165, 0.28));
+}
+
+.heart-glow-active {
+  filter: drop-shadow(0 14px 35px rgba(255, 50, 95, 0.6))
+          drop-shadow(0 0 60px rgba(255, 110, 145, 0.45));
+}
+
+/* Idle gentle floating & breathing */
+@keyframes romanticFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.025);
+  }
+}
+
+@keyframes gentlePulse {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+.animate-romantic-float {
+  animation: romanticFloat 4.2s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: gentlePulse 2.8s ease-in-out infinite;
+}
+
+/* Polaroid subtle photo shadow */
+.polaroid-shadow {
+  box-shadow: 0 10px 30px -5px rgba(100, 40, 60, 0.15),
+              0 2px 8px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Custom romantic scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(230, 80, 110, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(230, 80, 110, 0.45);
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
