@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import confetti from 'canvas-confetti';
 import sounds from '../audio/soundEffects';
 
-export default function HeartPullScene({ onComplete, girlfriendName = 'Angel' }) {
+export default function HeartPullScene({ onComplete, girlfriendName = 'Nonsense 🙃' }) {
   const [offsetY, setOffsetY] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isBursting, setIsBursting] = useState(false);
@@ -494,17 +494,17 @@ export default function HeartPullScene({ onComplete, girlfriendName = 'Angel' })
               <span>🎂</span>
             </div>
 
-            {/* Glowing Calligraphy Title for Angel */}
+            {/* Glowing Calligraphy Title for Nonsense 🙃 */}
             <h1 className="text-3xl md:text-5xl font-serif text-[#2B141C] font-normal leading-tight">
               Happy Birthday, <br />
-              <span className="font-script text-6xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-[#E62248] via-[#FF4B72] to-[#FF8FA3] block mt-1 filter drop-shadow">
+              <span className="font-script text-5xl md:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-[#E62248] via-[#FF4B72] to-[#FF8FA3] block mt-1 filter drop-shadow">
                 {girlfriendName}!
               </span>
             </h1>
 
             {/* Sweet Birthday Wish */}
             <p className="font-serif italic text-base md:text-lg text-[#5E3844] mt-4 max-w-xs mx-auto leading-relaxed">
-              "My heart burst with all the infinite love and adoration I hold for you. You are my greatest blessing, my sweet Angel. ✨❤️"
+              "My heart burst with all the infinite love and adoration I hold for you. Happy Birthday, Nonsense 🙃! ✨❤️"
             </p>
 
             {/* Cute Little Birthday Wish Accents */}
@@ -516,18 +516,18 @@ export default function HeartPullScene({ onComplete, girlfriendName = 'Angel' })
               <span className="animate-bounce" style={{ animationDelay: '0.8s' }}>💖</span>
             </div>
 
-            {/* Smooth Continue Button to Gift Box */}
-            <div className="mt-8">
+            {/* Smooth Continue Button to Cake */}
+            <div className="mt-8 flex justify-center">
               <button
                 onClick={() => {
                   sounds.playSparkle();
                   sounds.playWhoosh();
                   if (onComplete) onComplete();
                 }}
-                className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#FF4B72] to-[#E62248] text-white font-medium text-sm md:text-base tracking-wide shadow-xl shadow-rose-500/30 hover:shadow-rose-500/50 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
+                className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#FF4B72] to-[#E62248] text-white font-medium text-sm md:text-base tracking-wide shadow-xl shadow-rose-500/30 hover:shadow-rose-500/50 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer whitespace-nowrap"
               >
-                <span>Open Your Birthday Gift</span>
-                <span className="group-hover:translate-x-1.5 transition-transform duration-300">🎁 →</span>
+                <span>Make a Wish &amp; Cut The Cake</span>
+                <span className="group-hover:translate-x-1.5 transition-transform duration-300 whitespace-nowrap">🎂 →</span>
               </button>
             </div>
 

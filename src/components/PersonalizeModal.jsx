@@ -73,7 +73,7 @@ export default function PersonalizeModal({
               name="girlfriendName"
               value={formData.girlfriendName}
               onChange={handleChange}
-              placeholder="e.g. Angel"
+              placeholder="e.g. Nonsense 🙃"
               className="w-full px-4 py-2.5 rounded-xl border border-rose-200 focus:outline-none focus:ring-2 focus:ring-rose-400/50 text-sm text-[#382229] bg-[#FFFBFD]"
             />
           </div>

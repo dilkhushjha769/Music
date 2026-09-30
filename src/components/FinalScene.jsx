@@ -3,11 +3,10 @@ import confetti from 'canvas-confetti';
 import sounds from '../audio/soundEffects';
 
 export default function FinalScene({
-  girlfriendName = 'My Love',
-  specialDate = 'October 24, 2023',
-  personalMessage = 'No matter how many websites I build, this one will always be my favorite. ❤️',
+  girlfriendName = 'Nonsense 🙃',
+  specialDate = 'Happy Birthday Nonsense 🙃',
+  personalMessage = 'Bss aise hi saath rehna hmesha',
   onReplay,
-  onOpenSettings,
 }) {
   const [isLetterOpen, setIsLetterOpen] = useState(false);
   const [heartFloats, setHeartFloats] = useState([]);
@@ -31,7 +30,6 @@ export default function FinalScene({
 
     setHeartFloats((prev) => [...prev, ...newHearts]);
 
-    // Canvas confetti sparkle
     confetti({
       particleCount: 25,
       spread: 60,
@@ -55,8 +53,8 @@ export default function FinalScene({
   };
 
   return (
-    <div className="relative w-full h-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-[#FFF5F7] via-[#FAF7F2] to-[#FFF0F3] px-6 py-12 select-none overflow-hidden">
-      
+    <div className="relative w-full h-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-[#FFF5F7] via-[#FAF7F2] to-[#FFF0F3] px-4 py-8 select-none overflow-hidden">
+
       {/* Twilight romantic aura in background */}
       <div className="absolute w-[600px] h-[600px] bg-gradient-to-tr from-rose-200/35 via-pink-100/25 to-amber-100/20 rounded-full blur-3xl pointer-events-none animate-pulse-slow" />
 
@@ -77,100 +75,83 @@ export default function FinalScene({
       ))}
 
       {/* Main Content Card */}
-      <div className="relative z-10 max-w-lg w-full flex flex-col items-center text-center">
-        
+      <div className="relative z-10 max-w-md w-full flex flex-col items-center text-center">
+
         {/* Soft floating glowing emblem */}
-        <div className="relative mb-6">
-          <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-[#FF4B72] to-[#FF8FA3] flex items-center justify-center text-4xl shadow-xl shadow-rose-400/30 animate-romantic-float">
+        <div className="relative mb-4">
+          <div className="w-18 h-18 rounded-full bg-gradient-to-tr from-[#FF4B72] to-[#FF8FA3] flex items-center justify-center text-3xl shadow-xl shadow-rose-400/30 animate-romantic-float p-4">
             💖
           </div>
-          <div className="absolute -top-1 -right-1 text-xl animate-spin text-amber-300">
+          <div className="absolute -top-1 -right-1 text-lg animate-spin text-amber-300">
             ✨
           </div>
         </div>
 
-        {/* Girlfriend's Name in Elegant Calligraphy / Serif Typography */}
-        <div className="mb-4">
+        {/* Angel's Name */}
+        <div className="mb-3">
           <span className="text-xs uppercase tracking-[0.3em] text-[#B06D7D] font-semibold">
             To My Dearest
           </span>
-          <h1 className="text-4xl md:text-5xl font-serif text-[#2B141C] mt-1 font-normal tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-serif text-[#2B141C] mt-0.5 font-normal tracking-tight">
             {girlfriendName}
           </h1>
-          <div className="w-16 h-[2px] bg-gradient-to-r from-transparent via-[#E62248] to-transparent mx-auto mt-3" />
+          <div className="w-16 h-[2px] bg-gradient-to-r from-transparent via-[#E62248] to-transparent mx-auto mt-2" />
         </div>
 
-        {/* Romantic Core Message */}
-        <div className="glass-card rounded-3xl p-6 md:p-8 my-4 shadow-xl border border-white/80 max-w-md">
+        {/* Romantic Core Message Card */}
+        <div className="glass-card rounded-3xl p-6 md:p-8 my-3 shadow-xl border border-white/80 w-full">
           <p className="font-serif text-lg md:text-xl text-[#4A2D35] italic leading-relaxed">
             "{personalMessage}"
           </p>
 
-          {/* Special Anniversary or Milestones Date */}
           {specialDate && (
-            <div className="mt-4 pt-3 border-t border-rose-100/80 flex items-center justify-center gap-2 text-xs font-sans text-[#A66877] uppercase tracking-wider">
-              <span>Our Special Day:</span>
+            <div className="mt-3 pt-3 border-t border-rose-100/80 flex items-center justify-center gap-2 text-xs font-sans text-[#A66877] uppercase tracking-wider">
+              <span>Special Moment:</span>
               <span className="font-semibold text-[#E62248]">{specialDate}</span>
             </div>
           )}
         </div>
 
-        {/* Action Buttons: Open Secret Letter & Tap for Love */}
-        <div className="flex flex-col sm:flex-row items-center gap-3 w-full max-w-xs mt-4">
-          
+        {/* SLEEK, PROPERLY ALIGNED BUTTONS (Identical height, responsive, no awkward wrapping) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full mt-3">
+
           {/* Secret Love Letter Button */}
           <button
             onClick={handleOpenEnvelope}
-            className="w-full py-3.5 px-6 rounded-full bg-white/90 border border-rose-200/80 text-[#C42E4B] font-medium text-sm shadow-md hover:shadow-lg hover:bg-rose-50/80 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer flex items-center justify-center gap-2"
+            className="w-full h-12 px-5 rounded-full bg-white/95 border border-rose-300 text-[#C42E4B] font-semibold text-sm shadow-md hover:shadow-lg hover:bg-rose-50 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap"
           >
-            <span>💌</span>
-            <span>Read Secret Letter</span>
+            <span className="text-base">💌</span>
+            <span>Read Letter</span>
           </button>
 
           {/* Tap For Love Spawner */}
           <button
             onClick={handleTapForLove}
-            className="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-[#FF4B72] to-[#E62248] text-white font-medium text-sm shadow-lg shadow-rose-500/25 hover:shadow-rose-500/40 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer flex items-center justify-center gap-2"
+            className="w-full h-12 px-5 rounded-full bg-gradient-to-r from-[#FF4B72] to-[#E62248] text-white font-semibold text-sm shadow-md shadow-rose-500/25 hover:shadow-lg hover:shadow-rose-500/40 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap"
           >
-            <span>💖</span>
+            <span className="text-base">💖</span>
             <span>Tap for Love</span>
           </button>
         </div>
 
-        {/* End Footer Note */}
-        <div className="mt-8 flex flex-col items-center gap-2">
-          <p className="text-xs tracking-[0.25em] uppercase text-[#A66E7A] font-sans">
+        {/* Clean Footer Note - NO Edit Details link */}
+        <div className="mt-6 flex flex-col items-center gap-2">
+          <p className="text-[11px] tracking-[0.25em] uppercase text-[#A66E7A] font-sans">
             Made with ❤️, just for you.
           </p>
 
-          <div className="flex items-center gap-4 mt-2">
-            {/* Replay Button */}
-            <button
-              onClick={() => {
-                sounds.playTap();
-                sounds.playWhoosh();
-                if (onReplay) onReplay();
-              }}
-              className="text-xs text-[#8A505E] hover:text-[#E62248] transition-colors flex items-center gap-1 cursor-pointer underline underline-offset-4"
-            >
-              <span>↺</span>
-              <span>Replay Surprise</span>
-            </button>
-
-            <span className="text-xs text-rose-200">•</span>
-
-            {/* Personalize Button */}
-            <button
-              onClick={() => {
-                sounds.playTap();
-                if (onOpenSettings) onOpenSettings();
-              }}
-              className="text-xs text-[#8A505E] hover:text-[#E62248] transition-colors flex items-center gap-1 cursor-pointer underline underline-offset-4"
-            >
-              <span>✏️</span>
-              <span>Edit Details / Link</span>
-            </button>
-          </div>
+          {/* Replay Surprise Button */}
+          <button
+            onClick={() => {
+              sounds.playTap();
+              sounds.playWhoosh();
+              if (onReplay) onReplay();
+            }}
+            className="text-xs text-[#8A505E] hover:text-[#E62248] transition-colors flex items-center gap-1.5 cursor-pointer underline underline-offset-4 mt-1"
+          >
+            <span>↺</span>
+            <span>Replay Surprise</span>
+          </button>
         </div>
 
       </div>
@@ -179,7 +160,7 @@ export default function FinalScene({
       {isLetterOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 backdrop-blur-sm p-4 animate-fade-in">
           <div className="relative max-w-lg w-full bg-[#FFFDF9] rounded-3xl p-6 md:p-10 shadow-2xl border border-rose-200 transform animate-[scaleUp_0.35s_ease-out]">
-            
+
             {/* Close button */}
             <button
               onClick={() => {
@@ -192,7 +173,7 @@ export default function FinalScene({
             </button>
 
             {/* Wax Seal Header */}
-            <div className="flex flex-col items-center mb-6">
+            <div className="flex flex-col items-center mb-5">
               <div className="w-14 h-14 rounded-full bg-[#C41E3A] border-4 border-[#A3162D] text-white flex items-center justify-center text-xl shadow-lg shadow-rose-900/30">
                 ♡
               </div>
@@ -203,24 +184,24 @@ export default function FinalScene({
 
             {/* Letter Body */}
             <div className="font-handwriting text-2xl md:text-3xl text-[#3D262C] leading-relaxed space-y-4 max-h-[60vh] overflow-y-auto pr-2">
-              <p>My sweetest {girlfriendName},</p>
-              
+              {<p>Abhi likha hai😅,</p>
+/*
               <p>
-                From the moment you walked into my life, everything became brighter, warmer, and so much softer. 
+                From the moment you walked into my life, everything became brighter, warmer, and so much softer.
               </p>
 
               <p>
-                Thank you for being my safest home, my loudest laughter, and my gentlest peace. I promise to keep choosing you, loving you, and making you smile every single day.
+                Thank you for being my safest home, my loudest laughter, and my gentlest peace. On your birthday and every single day that follows, {personalMessage}.
               </p>
 
               <p className="pt-2">
                 Forever yours, <br />
-                With all my love ❤️
-              </p>
+                With all my heart ❤️
+              </p> */}
             </div>
 
             {/* Bottom seal */}
-            <div className="mt-6 pt-4 border-t border-rose-100 flex justify-between items-center text-xs font-sans text-rose-400">
+            <div className="mt-5 pt-3 border-t border-rose-100 flex justify-between items-center text-xs font-sans text-rose-400">
               <span>{specialDate}</span>
               <span>Always &amp; Forever ✨</span>
             </div>

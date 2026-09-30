@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import confetti from 'canvas-confetti';
 import sounds from '../audio/soundEffects';
 
-export default function BirthdayCakeScene({ onComplete, girlfriendName = 'My Love' }) {
+export default function BirthdayCakeScene({ onComplete, girlfriendName = 'Nonsense 🙃' }) {
   // Step: 'blow' | 'blown' | 'cutting' | 'cut'
   const [step, setStep] = useState('blow');
   const [knifeY, setKnifeY] = useState(0);
@@ -135,9 +135,7 @@ export default function BirthdayCakeScene({ onComplete, girlfriendName = 'My Lov
                   transform: step === 'cut' ? 'translateX(-8px)' : 'none',
                 }}
               >
-                {/* Cake base cylinder */}
                 <path d="M 40,135 C 40,135 40,165 125,165 C 210,165 210,135 210,135 L 210,105 C 210,105 210,135 125,135 C 40,135 40,105 40,105 Z" fill="url(#spongeGradient)" />
-                {/* Dripping pink glaze */}
                 <ellipse cx="125" cy="105" rx="85" ry="24" fill="url(#frostingGradient)" />
                 <path
                   d="M 40,105 Q 55,128 70,110 Q 90,132 110,112 Q 130,135 150,112 Q 170,130 190,110 Q 200,126 210,105"
@@ -151,10 +149,8 @@ export default function BirthdayCakeScene({ onComplete, girlfriendName = 'My Lov
                   className="transition-transform duration-700 ease-out animate-[slideSliceOut_0.8s_ease-out_forwards]"
                   transform="translate(45, 15)"
                 >
-                  {/* Triangular slice of cake */}
                   <path d="M 125,105 L 175,120 L 175,150 L 125,135 Z" fill="url(#sliceInside)" stroke="#E63956" strokeWidth="1" />
                   <path d="M 125,105 L 155,95 L 175,120 Z" fill="url(#frostingGradient)" />
-                  {/* Strawberry on slice */}
                   <text x="145" y="112" fontSize="18">🍓</text>
                 </g>
               )}
@@ -211,7 +207,6 @@ export default function BirthdayCakeScene({ onComplete, girlfriendName = 'My Lov
                 transition: step === 'cutting' ? 'transform 0.03s linear' : 'transform 0.3s ease-out',
               }}
             >
-              {/* Knife SVG */}
               <svg width="70" height="130" viewBox="0 0 70 130" className="overflow-visible filter drop-shadow-xl animate-bounce">
                 <defs>
                   <linearGradient id="knifeBlade" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -221,17 +216,14 @@ export default function BirthdayCakeScene({ onComplete, girlfriendName = 'My Lov
                   </linearGradient>
                 </defs>
 
-                {/* Blade */}
                 <path d="M 32,45 L 38,45 L 38,125 Q 38,128 32,122 Z" fill="url(#knifeBlade)" stroke="#FFA000" strokeWidth="1" />
-                {/* Knife Handle */}
                 <rect x="29" y="0" width="12" height="42" rx="4" fill="#C41E3A" stroke="#FFF" strokeWidth="1" />
-                {/* Handle Ribbon */}
                 <circle cx="35" cy="20" r="4" fill="#FFD166" />
                 <path d="M 31,42 Q 22,55 18,65 M 39,42 Q 48,55 52,65" stroke="#FF4B72" strokeWidth="2" fill="none" />
               </svg>
 
               {step === 'blown' && (
-                <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap bg-rose-600 text-white font-bold text-xs uppercase px-3 py-1 rounded-full shadow-lg animate-pulse">
+                <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap bg-rose-600 text-white font-bold text-xs uppercase px-3.5 py-1 rounded-full shadow-lg animate-pulse">
                   Tap to Cut! 🔪
                 </span>
               )}
@@ -240,18 +232,19 @@ export default function BirthdayCakeScene({ onComplete, girlfriendName = 'My Lov
 
         </div>
 
-        {/* Action Button after Cake is Cut */}
+        {/* Action Button after Cake is Cut -> Leads to Next Surprise (Gift Box with Earrings) */}
         {step === 'cut' && (
-          <div className="mt-8 animate-fade-in">
+          <div className="mt-8 animate-fade-in flex justify-center">
             <button
               onClick={() => {
                 sounds.playSparkle();
                 sounds.playWhoosh();
                 if (onComplete) onComplete();
               }}
-              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#FF4B72] to-[#E62248] text-white font-medium text-sm md:text-base tracking-wide shadow-lg shadow-rose-500/25 hover:shadow-rose-500/40 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#FF4B72] to-[#E62248] text-white font-semibold text-sm md:text-base tracking-wide shadow-lg shadow-rose-500/25 hover:shadow-rose-500/40 hover:scale-105 active:scale-95 transition-all cursor-pointer whitespace-nowrap"
             >
-              See Your Memories &amp; Photos 📸 →
+              <span>Open Your Next Surprise</span>
+              <span className="whitespace-nowrap">🎁 →</span>
             </button>
           </div>
         )}

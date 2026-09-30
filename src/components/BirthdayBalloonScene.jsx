@@ -3,15 +3,15 @@ import confetti from 'canvas-confetti';
 import sounds from '../audio/soundEffects';
 
 const INITIAL_BALLOONS = [
-  { id: 1, color: '#FF6B8B', highlight: '#FFA3B5', text: 'Prettiest Smile 🥰', x: 18, y: 35, delay: 0 },
-  { id: 2, color: '#FFB703', highlight: '#FFE066', text: 'My Sunshine ☀️', x: 38, y: 22, delay: 0.8 },
-  { id: 3, color: '#E63956', highlight: '#FF7597', text: 'Pure Magic ✨', x: 62, y: 28, delay: 0.4 },
-  { id: 4, color: '#B5838D', highlight: '#DDBEA9', text: 'Gentlest Heart 🧸', x: 82, y: 36, delay: 1.2 },
-  { id: 5, color: '#FF85A1', highlight: '#FFCAD4', text: 'My Whole World 🌎', x: 28, y: 52, delay: 0.6 },
+  { id: 1, color: '#FF6B8B', highlight: '#FFA3B5', text: 'Nonsense', x: 18, y: 35, delay: 0 },
+  { id: 2, color: '#FFB703', highlight: '#FFE066', text: 'Halfmind', x: 38, y: 22, delay: 0.8 },
+  { id: 3, color: '#E63956', highlight: '#FF7597', text: 'Rone Wali', x: 62, y: 28, delay: 0.4 },
+  { id: 4, color: '#B5838D', highlight: '#DDBEA9', text: 'Meri best friend', x: 82, y: 36, delay: 1.2 },
+  { id: 5, color: '#FF85A1', highlight: '#FFCAD4', text: 'Meri Jaan 💖', x: 28, y: 52, delay: 0.6 },
   { id: 6, color: '#F72585', highlight: '#B5179E', text: 'Forever & Always 💍', x: 72, y: 50, delay: 1.0 },
 ];
 
-export default function BirthdayBalloonScene({ onComplete, girlfriendName = 'My Love' }) {
+export default function BirthdayBalloonScene({ onComplete, girlfriendName = 'Nonsense 🙃' }) {
   const [balloons, setBalloons] = useState(INITIAL_BALLOONS);
   const [poppedCount, setPoppedCount] = useState(0);
   const [isWishRevealed, setIsWishRevealed] = useState(false);
@@ -74,7 +74,7 @@ export default function BirthdayBalloonScene({ onComplete, girlfriendName = 'My 
 
   return (
     <div className="relative w-full h-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-[#FFF5F7] via-[#FAF7F2] to-[#FFF0F5] px-4 py-8 select-none overflow-hidden">
-      
+
       {/* Ambient twilight / celebration warm aura */}
       <div className="absolute w-[600px] h-[600px] bg-gradient-to-tr from-pink-200/40 via-amber-100/30 to-purple-100/25 rounded-full blur-3xl pointer-events-none" />
 
@@ -96,7 +96,7 @@ export default function BirthdayBalloonScene({ onComplete, girlfriendName = 'My 
       {/* BALLOON POPPING STAGE */}
       {!isWishRevealed ? (
         <div className="relative z-10 w-full max-w-xl flex flex-col items-center min-h-[560px]">
-          
+
           {/* Header instructions */}
           <div className="text-center mb-4">
             <span className="inline-block px-4 py-1.5 rounded-full bg-rose-50 border border-rose-200/70 text-[#C44D68] text-xs font-semibold uppercase tracking-[0.25em] shadow-sm mb-2">
@@ -134,22 +134,22 @@ export default function BirthdayBalloonScene({ onComplete, girlfriendName = 'My 
                     </radialGradient>
                   </defs>
 
-                  <ellipse 
-                    cx="47" 
-                    cy="48" 
-                    rx="42" 
-                    ry="48" 
-                    fill={`url(#balloonGrad-${b.id})`} 
+                  <ellipse
+                    cx="47"
+                    cy="48"
+                    rx="42"
+                    ry="48"
+                    fill={`url(#balloonGrad-${b.id})`}
                   />
 
-                  <ellipse 
-                    cx="32" 
-                    cy="30" 
-                    rx="12" 
-                    ry="7" 
-                    transform="rotate(-30 32 30)" 
-                    fill="white" 
-                    opacity="0.65" 
+                  <ellipse
+                    cx="32"
+                    cy="30"
+                    rx="12"
+                    ry="7"
+                    transform="rotate(-30 32 30)"
+                    fill="white"
+                    opacity="0.65"
                   />
 
                   <polygon points="43,96 51,96 54,101 40,101" fill={b.color} />
@@ -174,7 +174,7 @@ export default function BirthdayBalloonScene({ onComplete, girlfriendName = 'My 
       ) : (
         /* GRAND BIRTHDAY WISH REVEAL AFTER BALLOONS */
         <div className="relative z-10 w-full max-w-lg glass-card rounded-3xl p-6 md:p-10 text-center shadow-2xl border border-white/80 animate-[scaleUp_0.4s_ease-out]">
-          
+
           {/* Song indicator */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200/70 text-[#C48008] text-xs font-semibold uppercase tracking-widest mb-4 shadow-sm animate-bounce">
             <span>🎶</span>
@@ -192,16 +192,17 @@ export default function BirthdayBalloonScene({ onComplete, girlfriendName = 'My 
             "Every balloon held a piece of why you mean the entire world to me. May your birthday be as luminous, wonderful, and extraordinary as you are! 💖✨"
           </p>
 
-          <div className="mt-8">
+          <div className="mt-8 flex justify-center">
             <button
               onClick={() => {
                 sounds.playSparkle();
                 sounds.playWhoosh();
                 if (onComplete) onComplete();
               }}
-              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#FF4B72] to-[#E62248] text-white font-medium text-sm md:text-base tracking-wide shadow-lg shadow-rose-500/25 hover:shadow-rose-500/40 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#FF4B72] to-[#E62248] text-white font-medium text-sm md:text-base tracking-wide shadow-lg shadow-rose-500/25 hover:shadow-rose-500/40 hover:scale-105 active:scale-95 transition-all cursor-pointer whitespace-nowrap"
             >
-              Bring Out The Birthday Cake 🎂 →
+              <span>Next Surprise Awaits</span>
+              <span className="whitespace-nowrap">💌 →</span>
             </button>
           </div>
 

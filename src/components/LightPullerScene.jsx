@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import sounds from '../audio/soundEffects';
 
-export default function LightPullerScene({ onLightsOn, girlfriendName = 'Angel' }) {
+export default function LightPullerScene({ onLightsOn, girlfriendName = 'Nonsense 🙃' }) {
   const [isLightOn, setIsLightOn] = useState(false);
   const [offsetY, setOffsetY] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
